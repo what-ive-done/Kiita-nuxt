@@ -18,6 +18,24 @@
           Home
         </nuxt-link>
         <nuxt-link
+          :to="{ name: 'trend' }"
+          class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4"
+        >
+          Trend
+        </nuxt-link>
+        <nuxt-link
+          :to="{ name: 'timeline' }"
+          class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4"
+        >
+          Timeline
+        </nuxt-link>
+        <nuxt-link
+          :to="{ name: 'tag-feed' }"
+          class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4"
+        >
+          TagFeeds
+        </nuxt-link>
+        <nuxt-link
           :to="{ name: 'users' }"
           class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4"
         >
