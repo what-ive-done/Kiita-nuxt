@@ -17,12 +17,12 @@
         >
           Home
         </nuxt-link>
-        <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
-          Examples
-        </a>
-        <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white">
-          Blog
-        </a>
+        <nuxt-link
+          :to="{ name: 'users' }"
+          class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4"
+        >
+          Users
+        </nuxt-link>
       </div>
       <div>
         <nuxt-link
