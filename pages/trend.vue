@@ -1,6 +1,13 @@
 <template>
-  <div>
-    <h1>Trend of Kiita</h1>
+  <div class="container mx-auto">
+    <div class="flex mb-4 bg-grey-lighter">
+      <div class="w-1/5 text-grey-darker text-center bg-grey-light px-4 py-2 m-2">
+      </div>
+      <div class="w-3/5 text-grey-darker bg-grey-light px-4 py-2 m-2">
+      </div>
+      <div class="w-1/5 text-grey-darker bg-grey-light px-4 py-2 m-2">
+      </div>
+    </div>
   </div>
 </template>
 

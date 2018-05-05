@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Favorite</h1>
+    <h1>Post Details</h1>
   </div>
 </template>
 
