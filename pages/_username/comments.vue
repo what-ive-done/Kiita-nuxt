@@ -16,7 +16,7 @@
         </nuxt-link>
       </li>
     </ul>
-    <h1>Username Index</h1>
+    <h1>Comments</h1>
   </div>
 </template>
 
