@@ -23,7 +23,7 @@
         </nuxt-link>
       </li>
     </ul>
-    Comments
+    Stocked Items
   </div>
 </template>
 
