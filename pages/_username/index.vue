@@ -40,13 +40,7 @@
 import axios from 'axios'
 
 export default {
-  layout: 'username',
-  async asyncData () {
-    const { data } = await axios.get('http://localhost:8080/api/items')
-    return {
-      posts: data
-    }
-  }
+  layout: 'username'
 }
 </script>
 

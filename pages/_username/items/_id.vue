@@ -36,13 +36,6 @@
 import axios from 'axios'
 
 export default {
-  async asyncData ({ params }) {
-    console.log('params => ', params.id)
-    const { data } = await axios.get(`http://localhost:8080/api/items/${params.id}`)
-    return {
-      post: data
-    }
-  }
 }
 </script>
 
