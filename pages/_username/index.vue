@@ -24,13 +24,28 @@
       </li>
     </ul>
     Recent Post
+    <ul>
+      <li v-for="post in posts" :key="post.id">
+        <nuxt-link
+          :to="{ name: 'username-items-id', params: { username: 'changjoo-park', id: post.id }  }"
+        >
+          {{ post.title }}
+        </nuxt-link>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   layout: 'username',
-  components: {
+  async asyncData () {
+    const { data } = await axios.get('http://localhost:8080/api/items')
+    return {
+      posts: data
+    }
   }
 }
 </script>
