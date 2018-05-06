@@ -14,7 +14,7 @@ config.dev = !(process.env.NODE_ENV === 'production')
 
 app.get('/api/items', async (req, res) => {
   try {
-    const { data } = await axios.get('http://127.0.0.1:3000/users/6cb8830c-ccdf-4cdf-b5ac-6dbc5146d674/items')
+    const { data } = await axios.get('http://127.0.0.1:3000/users/ccd1d8fa-5911-46e5-be2f-ef7a73dbd6b7/items')
     res.json(data)
   } catch (error) {
     console.error(error)
@@ -22,6 +22,15 @@ app.get('/api/items', async (req, res) => {
   }
 })
 
+app.get('/api/items/:id', async (req, res) => {
+  try {
+    console.log(req.params)
+    const { data } = await axios.get(`http://127.0.0.1:3000/items/${req.params.id}?_embed=comments`)
+    res.json(data)
+  } catch (error) {
+    res.json({ message: 'error' })
+  }
+})
 async function start() {
   // Init Nuxt.js
   const nuxt = new Nuxt(config)
