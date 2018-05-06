@@ -16,7 +16,8 @@
     "@nuxtjs/axios": "^5.0.0",
     "express": "^4.15.3",
     "nuxt": "^1.0.0",
-    "sqlite3": "^4.0.0",
+    "pg": "^7.4.2",
+    "pg-hstore": "^2.3.2",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
@@ -26,6 +27,7 @@
     "eslint": "^4.15.0",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-vue": "^4.0.0",
+    "faker": "^4.1.0",
     "nodemon": "^1.11.0",
     "sequelize": "^4.37.6",
     "tailwindcss": "^0.1.3"
