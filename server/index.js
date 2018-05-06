@@ -2,6 +2,7 @@
 const express = require('express')
 const axios = require('axios')
 const { Nuxt, Builder } = require('nuxt')
+const api = require('./api')
 const app = express()
 const host = process.env.HOST || '127.0.0.1'
 const port = process.env.PORT || 8080
@@ -12,25 +13,27 @@ app.set('port', port)
 let config = require('../nuxt.config.js')
 config.dev = !(process.env.NODE_ENV === 'production')
 
-app.get('/api/items', async (req, res) => {
-  try {
-    const { data } = await axios.get('http://127.0.0.1:3000/users/6cb8830c-ccdf-4cdf-b5ac-6dbc5146d674/items')
-    res.json(data)
-  } catch (error) {
-    console.error(error)
-    res.json({ message: 'error' })
-  }
-})
+app.use('/api', api)
+// app.get('/api/items', async (req, res) => {
+//   try {
+//     const { data } = await axios.get('http://127.0.0.1:3000/users/6cb8830c-ccdf-4cdf-b5ac-6dbc5146d674/items')
+//     res.json(data)
+//   } catch (error) {
+//     console.error(error)
+//     res.json({ message: 'error' })
+//   }
+// })
 
-app.get('/api/items/:id', async (req, res) => {
-  try {
-    console.log(req.params)
-    const { data } = await axios.get(`http://127.0.0.1:3000/items/${req.params.id}?_embed=comments`)
-    res.json(data)
-  } catch (error) {
-    res.json({ message: 'error' })
-  }
-})
+// app.get('/api/items/:id', async (req, res) => {
+//   try {
+//     console.log(req.params)
+//     const { data } = await axios.get(`http://127.0.0.1:3000/items/${req.params.id}?_embed=comments`)
+//     res.json(data)
+//   } catch (error) {
+//     res.json({ message: 'error' })
+//   }
+// })
+
 async function start() {
   // Init Nuxt.js
   const nuxt = new Nuxt(config)
