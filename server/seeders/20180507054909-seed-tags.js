@@ -1,5 +1,4 @@
 const faker = require('faker')
-
 'use strict';
 
 module.exports = {
@@ -14,14 +13,16 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-   const tags = []
-   const numberOfTags = 100
-   for (let index = 0; index < numberOfTags; index++) {
-     tags.push({
-       name: faker.lorem.word()
-     })
-   }
-   return queryInterface.bulkInsert('Tags', tags)
+    const tags = []
+    const NumberOfTags = 1000
+    for (let index = 0; index < NumberOfTags; index++) {
+      tags.push({
+        name: faker.lorem.word(),
+        createdAt: new Date(),
+        updatedAt: new Date()
+      })
+    }
+    return queryInterface.bulkInsert('Tags', tags, {})
   },
 
   down: (queryInterface, Sequelize) => {
@@ -32,7 +33,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('Person', null, {});
     */
-   return queryInterface.bulkDelete('Tags', null, {})
+    return queryInterface.bulkDelete('Tags', null, {});
   }
 };
-
