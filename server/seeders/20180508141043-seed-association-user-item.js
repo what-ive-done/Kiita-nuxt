@@ -14,6 +14,11 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
+   const NumberOfUsers = 100
+   const NumberOfTags = 100
+   const NumberOfItems = 3000
+   const NumberOfComments = 10000
+
     // User
     const fakeUsers = []
     const admin = {
@@ -32,7 +37,7 @@ module.exports = {
     }
     fakeUsers.push(admin)
     fakeUsers.push(me)
-    for (let index = 0; index < 10; index++) {
+    for (let index = 0; index < NumberOfUsers; index++) {
       const internet = faker.internet
       fakeUsers.push({
         email: internet.email(),
@@ -45,10 +50,9 @@ module.exports = {
     await queryInterface.bulkInsert('Users', fakeUsers, {})
     const users = await queryInterface.sequelize.query(`SELECT id from "Users";`);
     const usersRow = users[0]
-    
+
     // Items
     const fakeItems = []
-    const NumberOfItems = 30
     for (let index = 0; index < NumberOfItems; index++) {
       const randomUserIndex = Math.floor(Math.random() * usersRow)
       fakeItems.push({
@@ -66,7 +70,6 @@ module.exports = {
 
     // Comments
     const fakeComments = []
-    const NumberOfComments = 1000
     for (let index = 0; index < NumberOfComments; index++) {
       const randomUserIndex = Math.floor(Math.random() * usersRow)
       const randomItemIndex = Math.floor(Math.random() * itemsRow)
@@ -81,10 +84,9 @@ module.exports = {
     await queryInterface.bulkInsert('Comments', fakeComments, {})
     const comments = await queryInterface.sequelize.query(`SELECT id from "Comments";`);
     const commentsRow = comments[0]
-    
+
     // Tags
     const fakeTags = []
-    const NumberOfTags = 10
     for (let index = 0; index < NumberOfTags; index++) {
       fakeTags.push({
         name: faker.lorem.word(),
@@ -98,7 +100,7 @@ module.exports = {
 
     // Items - Tags
     const fakeItemTags = []
-    
+
     function getRandom(arr, n) {
         var result = new Array(n),
             len = arr.length,
