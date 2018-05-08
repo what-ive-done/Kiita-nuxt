@@ -54,14 +54,15 @@ module.exports = {
     // Items
     const fakeItems = []
     for (let index = 0; index < NumberOfItems; index++) {
-      const randomUserIndex = Math.floor(Math.random() * usersRow)
+      const randomUserIndex = Math.floor(Math.random() * usersRow.length)
+      console.log(usersRow[randomUserIndex])
       fakeItems.push({
         title: faker.lorem.sentence(),
         body: faker.lorem.paragraphs(),
         published: faker.random.boolean(),
         createdAt: new Date(),
         updatedAt: new Date(),
-        UserId: usersRow[randomUserIndex]
+        UserId: usersRow[randomUserIndex].id
       })
     }
     await queryInterface.bulkInsert('Items', fakeItems, {})
@@ -71,14 +72,14 @@ module.exports = {
     // Comments
     const fakeComments = []
     for (let index = 0; index < NumberOfComments; index++) {
-      const randomUserIndex = Math.floor(Math.random() * usersRow)
-      const randomItemIndex = Math.floor(Math.random() * itemsRow)
+      const randomUserIndex = Math.floor(Math.random() * usersRow.length)
+      const randomItemIndex = Math.floor(Math.random() * itemsRow.length)
       fakeComments.push({
         body: faker.lorem.sentence(),
         createdAt: new Date(),
         updatedAt: new Date(),
-        UserId: usersRow[randomUserIndex],
-        ItemId: itemsRow[randomItemIndex],
+        UserId: usersRow[randomUserIndex].id,
+        ItemId: itemsRow[randomItemIndex].id,
       })
     }
     await queryInterface.bulkInsert('Comments', fakeComments, {})
