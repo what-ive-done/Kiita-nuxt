@@ -1,10 +1,7 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "1q2w3e4r",
-    "database": "database_development",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "sqlite",
+    "storage": "./dev.sqlite"
   },
   "test": {
     "username": "root",

@@ -30,6 +30,7 @@
     "faker": "^4.1.0",
     "nodemon": "^1.11.0",
     "sequelize": "^4.37.6",
+    "sqlite3": "^4.0.0",
     "tailwindcss": "^0.1.3"
   }
 }
