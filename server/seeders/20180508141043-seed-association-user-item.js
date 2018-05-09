@@ -55,7 +55,6 @@ module.exports = {
     const fakeItems = []
     for (let index = 0; index < NumberOfItems; index++) {
       const randomUserIndex = Math.floor(Math.random() * usersRow.length)
-      console.log(usersRow[randomUserIndex])
       fakeItems.push({
         title: faker.lorem.sentence(),
         body: faker.lorem.paragraphs(),
