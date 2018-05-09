@@ -1,0 +1,10 @@
+@ENDPOINT=http://localhost:8080/api
+
+### GET USERS
+GET {{ENDPOINT}}/users HTTP/1.1
+
+### GET USERS by Offset
+GET {{ENDPOINT}}/users?offset=30 HTTP/1.1
+
+### GET USERS by Offset Limit
+GET {{ENDPOINT}}/users?offset=30&limit=10 HTTP/1.1
