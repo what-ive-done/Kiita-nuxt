@@ -8,3 +8,31 @@ GET {{ENDPOINT}}/users?offset=30 HTTP/1.1
 
 ### GET USERS by Offset Limit
 GET {{ENDPOINT}}/users?offset=30&limit=10 HTTP/1.1
+
+### Get User by USERNAME
+GET {{ENDPOINT}}/users/changjoo-park HTTP/1.1
+
+### Get Items
+GET {{ENDPOINT}}/items HTTP/1.1
+
+### Get Item By Id
+GET {{ENDPOINT}}/items/1 HTTP/1.1
+
+### Get Item By USERNAME
+GET {{ENDPOINT}}/users/changjoo-park/items HTTP/1.1
+
+### Get Item By USERNAME and Id
+GET {{ENDPOINT}}/users/changjoo-park/items/16 HTTP/1.1
+
+### Get Comments by USERNAME
+GET {{ENDPOINT}}/users/changjoo-park/comments HTTP/1.1
+
+
+### Get Tags
+GET {{ENDPOINT}}/tags HTTP/1.1
+
+### Get Tag By TagName
+GET {{ENDPOINT}}/tags/illum HTTP/1.1
+
+### TODO: Get Items By TagName
+GET {{ENDPOINT}}/tags/illum/items HTTP/1.1
