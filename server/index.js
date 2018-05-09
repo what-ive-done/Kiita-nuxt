@@ -13,9 +13,8 @@ app.set('port', port)
 let config = require('../nuxt.config.js')
 config.dev = !(process.env.NODE_ENV === 'production')
 
-app.use('/api', api)
-
 async function start() {
+  app.use('/api', api)
   // Init Nuxt.js
   const nuxt = new Nuxt(config)
 
