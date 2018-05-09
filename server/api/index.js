@@ -15,6 +15,7 @@ router.use(require('./post-item'))
 router.use(require('./patch-item'))
 router.use(require('./delete-item'))
 // Comments
+router.use(require('./get-comments-by-username'))
 router.use(require('./post-comment'))
 router.use(require('./patch-comment'))
 router.use(require('./delete-comment'))
