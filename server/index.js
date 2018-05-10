@@ -1,6 +1,6 @@
-
 const express = require('express')
 const axios = require('axios')
+const morgan = require('morgan')
 const { Nuxt, Builder } = require('nuxt')
 const bodyParser = require('body-parser')
 const api = require('./api')
@@ -15,6 +15,7 @@ let config = require('../nuxt.config.js')
 config.dev = !(process.env.NODE_ENV === 'production')
 
 async function start() {
+  app.use(morgan())
   app.use(bodyParser.json())
   app.use('/api', api)
   // Init Nuxt.js
