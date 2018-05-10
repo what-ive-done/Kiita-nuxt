@@ -5,7 +5,6 @@ const db = require('../models')
 router.get('/tags/:name/items', async (req, res, next) => {
   try {
     const { name } = req.params
-    console.log('name => ', name)
     const tag = await db.Tag.findOne({
       where: { name },
       include: [
