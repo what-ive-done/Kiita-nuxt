@@ -9,7 +9,10 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     Item.belongsTo(models.User)
     Item.hasMany(models.Comment)
-    Item.belongsToMany(models.Tag, { through: 'ItemTags' })
+    Item.belongsToMany(models.Tag, {
+      through: 'ItemTags',
+      foreignKey: 'TagId'
+    })
   };
   return Item;
 };
