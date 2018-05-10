@@ -2,6 +2,7 @@
 const express = require('express')
 const axios = require('axios')
 const { Nuxt, Builder } = require('nuxt')
+const bodyParser = require('body-parser')
 const api = require('./api')
 const app = express()
 const host = process.env.HOST || '127.0.0.1'
@@ -14,6 +15,7 @@ let config = require('../nuxt.config.js')
 config.dev = !(process.env.NODE_ENV === 'production')
 
 async function start() {
+  app.use(bodyParser.json())
   app.use('/api', api)
   // Init Nuxt.js
   const nuxt = new Nuxt(config)
