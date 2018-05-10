@@ -34,5 +34,8 @@ GET {{ENDPOINT}}/tags HTTP/1.1
 ### Get Tag By TagName
 GET {{ENDPOINT}}/tags/illum HTTP/1.1
 
-### TODO: Get Items By TagName
+### Get Items By TagName
 GET {{ENDPOINT}}/tags/illum/items HTTP/1.1
+
+### Get Tags By Item Id
+GET {{ENDPOINT}}/items/1/tags HTTP/1.1
