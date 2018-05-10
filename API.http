@@ -39,3 +39,13 @@ GET {{ENDPOINT}}/tags/illum/items HTTP/1.1
 
 ### Get Tags By Item Id
 GET {{ENDPOINT}}/items/1/tags HTTP/1.1
+
+
+### Authenticate
+POST {{ENDPOINT}}/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "password"
+}
