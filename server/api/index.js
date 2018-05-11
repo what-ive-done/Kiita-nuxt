@@ -10,8 +10,8 @@ fs
   .filter(file => {
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
-  .forEach(route => {
-    router.use(require(`./${route}`))
+  .forEach(file => {
+    router.use(require(path.join(__dirname, file)))
   })
 
 
