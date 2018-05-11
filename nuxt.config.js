@@ -48,12 +48,10 @@ module.exports = {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/api/auth/login', method: 'post', propertyName: 'token' },
+          login: { url: 'http://localhost:8080/api/auth/login', method: 'post', propertyName: 'accessToken' },
           logout: { url: '/api/auth/logout', method: 'post' },
-          user: { url: '/api/auth/user', method: 'get', propertyName: 'user' }
-        },
-        // tokenRequired: true,
-        // tokenType: 'bearer',
+          user: { url: 'http://localhost:8080/api/auth/user', method: 'get', propertyName: 'user' }
+        }
       }
     }
   },
