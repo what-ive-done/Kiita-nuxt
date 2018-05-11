@@ -43,12 +43,17 @@
         </nuxt-link>
       </div>
       <div>
-        <nuxt-link
-          class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0"
-          :to="{ name: 'username', params: { username: 'changjoo-park' } }"
-        >
-          ChangJoo Park
-        </nuxt-link>
+        <template v-if="$auth.loggedIn">
+          <nuxt-link
+            class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0"
+            :to="{ name: 'username', params: { username: 'changjoo-park' } }"
+          >
+            ChangJoo Park
+          </nuxt-link>
+        </template>
+        <template v-else>
+          가입 / 로그인
+        </template>
       </div>
     </div>
   </nav>
