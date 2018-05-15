@@ -26,9 +26,7 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [
-    '~/assets/css/tailwind.css'
-  ],
+  css: [],
 
   /*
   ** Plugins to load before mounting the App
@@ -40,6 +38,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    'bootstrap-vue/nuxt',
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/auth',
     '@nuxtjs/axios'
