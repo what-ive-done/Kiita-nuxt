@@ -4,11 +4,13 @@ import axios from 'axios'
 const createStore = () => {
   return new Vuex.Store({
     state: {
+      profileUser: {},
       post: {},
       posts: []
     },
     getters: {
-      posts: state => state.posts
+      posts: state => state.posts,
+      profileUser: state => state.profileUser
     },
     mutations: {
       setPosts: (state, posts) => {
@@ -16,6 +18,9 @@ const createStore = () => {
       },
       setCurrentPost: (state, post) => {
         state.post = post
+      },
+      setProfileUser: (state, user) => {
+        state.profileUser = user
       }
     },
     actions: {
@@ -27,11 +32,24 @@ const createStore = () => {
         let { data } = await axios.get(`http://localhost:8080/api/items/${id}`)
         commit('setCurrentPost', data)
       },
+      async getProfileUser ({ commit }, username) {
+        let { data } = await axios.get(`http://localhost:8080/api/users/${username}`)
+        commit('setProfileUser', data)
+      },
       async nuxtServerInit ({commit}, {store, route, params}) {
         if (process.server && route.name === 'trend') {
           let { data } = await axios.get(`http://localhost:8080/api/items`)
           commit('setPosts', data)
+        }
+        if (process.server && route.name === 'username') {
+          console.log('username route ', params)
+          try {
+            let { data } = await axios.get(`http://localhost:8080/api/users/${params.username}`)
+            commit('setProfileUser', data)
+          } catch (error) {
+            console.log(error.message)
           }
+        }
       }
     }
   })
