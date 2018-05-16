@@ -25,11 +25,16 @@
     >
       Users
     </nuxt-link>
+    <a href="#" @click.prevent="$auth.logout"
+      v-if="$auth.loggedIn"
+    >
+      로그아웃
+    </a>
     <nuxt-link
       v-if="$auth.loggedIn"
-      :to="{ name: 'username', params: { username: 'changjoo-park' } }"
+      :to="{ name: 'username', params: { username: $auth.user.username } }"
     >
-      ChangJoo Park
+      {{ $auth.user.username }}
     </nuxt-link>
     <nuxt-link
       v-else
