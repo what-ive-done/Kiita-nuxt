@@ -8,12 +8,8 @@
       >
       <div class="text-center sm:text-left sm:flex-grow">
         <div class="mb-4">
-          <p class="text-xl leading-tight">ChangJoo Park</p>
-          <p class="text-sm leading-tight text-grey-dark">@<span>changjoo-park</span></p>
-          <div class="border-t border-purple mt-4">
-            <p class="text-sm leading-tight text-grey-dark">pcjpcj2@gmail.com</p>
-            <p class="text-sm leading-tight text-grey-dark">Seoul, Korea</p>
-          </div>
+          <p class="text-xl leading-tight">{{ profileUser.username }}</p>
+          <p class="text-sm leading-tight text-grey-dark">{{ profileUser.email }}</p>
         </div>
       </div>
       <div>
@@ -29,6 +25,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
+export default {
+  computed: {
+    ...mapGetters(['profileUser'])
+  }
+}
 </script>
 
 <style>
