@@ -1,19 +1,19 @@
 <template>
-  <div class="container mx-auto">
-    <div class="flex mb-4 bg-grey-lighter">
-      <div class="w-1/5 text-grey-darker text-center bg-grey-light px-4 py-2 m-2">
-      </div>
-      <div class="w-3/5 text-grey-darker bg-grey-light px-4 py-2 m-2">
-      </div>
-      <div class="w-1/5 text-grey-darker bg-grey-light px-4 py-2 m-2">
-      </div>
-    </div>
+  <div class="container">
+    {{ posts }}
   </div>
 </template>
 
 <script>
-export default {
+import { mapGetters } from 'vuex'
 
+export default {
+  fetch({ store }) {
+    store.dispatch('getPosts')
+  },
+  computed: {
+    ...mapGetters(['posts'])
+  }
 }
 </script>
 
