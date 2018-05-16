@@ -19,21 +19,14 @@
 import Navigation from '~/components/Navigation.vue'
 import Profile from '~/components/username/Profile.vue'
 import TopMenu from '~/components/username/TopMenu.vue'
-import axios from 'axios'
 
 export default {
-  asyncData (context) {
-    console.log(axios)
-    axios.get('http://localhost:3000/users/6cb8830c-ccdf-4cdf-b5ac-6dbc5146d674')
-    .then(result => {
-      console.log(result)
-    })
-  },
   components: {
     Navigation,
     Profile,
     TopMenu
-  }
+  },
+
 }
 </script>
 
