@@ -33,7 +33,9 @@
     "eslint-loader": "^2.0.0",
     "eslint-plugin-vue": "^4.0.0",
     "faker": "^4.1.0",
+    "node-sass": "^4.9.0",
     "nodemon": "^1.17.4",
+    "sass-loader": "^7.0.1",
     "sequelize": "^4.37.7",
     "sqlite3": "^4.0.0",
     "webpackbar": "^2.6.1"
