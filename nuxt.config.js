@@ -14,7 +14,13 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://unpkg.com/purecss@1.0.0/build/pure-min.css',
+        integrity: 'sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w',
+        crossorigin: 'anonymous'
+      }
     ]
   },
 
@@ -26,7 +32,9 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [],
+  css: [
+    '@/assets/style.scss'
+  ],
 
   /*
   ** Plugins to load before mounting the App
@@ -38,7 +46,6 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    'bootstrap-vue/nuxt',
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/auth',
     '@nuxtjs/axios'
