@@ -1,15 +1,13 @@
 <template>
-  <div>
+  <div class="container">
     <navigation />
-    <div class="container mx-auto">
-      <div class="flex mb-4 bg-grey-lighter">
-        <div class="w-1/4 md:w-1/4 sm:w-full text-grey-darker text-center bg-grey-light px-4 py-2 m-2">
-          <profile />
-        </div>
-        <div class="w-3/4 md:w-3/4 sm:w-full text-grey-darker bg-grey-light px-4 py-2 m-2">
-          <top-menu />
-          <nuxt/>
-        </div>
+    <div class="pure-g">
+      <div class="pure-u-6-24">
+        <profile />
+      </div>
+      <div class="pure-u-18-24">
+        <top-menu />
+        <nuxt/>
       </div>
     </div>
   </div>
