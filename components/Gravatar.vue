@@ -22,5 +22,9 @@ export default {
 </script>
 
 <style>
-
+.user-avatar {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1em;
+}
 </style>
