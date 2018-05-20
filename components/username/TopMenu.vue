@@ -4,7 +4,7 @@
       <li class="pure-menu-item">
         <nuxt-link
           class="pure-menu-link"
-          :to="{ name: 'username', params: { username: 'changjoo-park' } }"
+          :to="{ name: 'username', params: { username: user.username } }"
         >
         Items
         </nuxt-link>
@@ -12,7 +12,7 @@
       <li class="pure-menu-item">
         <nuxt-link
           class="pure-menu-link"
-          :to="{ name: 'username-contributes', params: { username: 'changjoo-park' } }"
+          :to="{ name: 'username-contributes', params: { username: user.username } }"
         >
         Contributes
         </nuxt-link>
@@ -20,7 +20,7 @@
       <li class="pure-menu-item">
         <nuxt-link
           class="pure-menu-link"
-          :to="{ name: 'username-followers', params: { username: 'changjoo-park' } }"
+          :to="{ name: 'username-followers', params: { username: user.username } }"
         >
           Followers
         </nuxt-link>
@@ -31,7 +31,12 @@
 
 <script>
 export default {
-
+  props: {
+    user: {
+      type: Object,
+      required: true
+    }
+  }
 }
 </script>
 
