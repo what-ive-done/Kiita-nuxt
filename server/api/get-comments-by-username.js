@@ -7,7 +7,15 @@ router.get('/users/:username/comments', async (req, res, next) => {
   try {
     const user = await db.User.findOne({
       where: { username },
-      include: [{ model: db.Comment }]
+      include: [{
+        model: db.Comment,
+        limit: 5,
+        include: [
+          {
+            model: db.Item
+          }
+        ]
+      }]
     })
     res.json(user)
   } catch (error) {
