@@ -9,7 +9,7 @@
         />
       </div>
       <div class="pure-u-18-24">
-        <top-menu />
+        <top-menu :user="profileUser"/>
         <nuxt/>
       </div>
     </div>
