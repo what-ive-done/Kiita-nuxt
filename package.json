@@ -14,11 +14,11 @@
     "test": "jest --watchAll"
   },
   "dependencies": {
-    "@nuxtjs/auth": "^4.3.0",
+    "@nuxtjs/auth": "^4.4.0",
     "@nuxtjs/axios": "^5.0.0",
     "body-parser": "^1.18.3",
-    "bootstrap-vue": "^2.0.0-rc.9",
     "express": "^4.15.3",
+    "gravatar": "^1.6.0",
     "jsonwebtoken": "^8.2.1",
     "morgan": "^1.9.0",
     "nuxt": "^1.0.0",
@@ -40,7 +40,7 @@
     "node-sass": "^4.9.0",
     "nodemon": "^1.17.4",
     "sass-loader": "^7.0.1",
-    "sequelize": "^4.37.7",
+    "sequelize": "^4.37.8",
     "sqlite3": "^4.0.0",
     "webpackbar": "^2.6.1"
   },
