@@ -41,8 +41,8 @@ const createStore = () => {
           let { data } = await axios.get(`http://localhost:8080/api/items`)
           commit('setPosts', data)
         }
-        if (process.server && route.name === 'username') {
-          console.log('username route ', params)
+        const includesUsername = route.name.includes('username')
+        if (process.server && includesUsername) {
           try {
             let { data } = await axios.get(`http://localhost:8080/api/users/${params.username}`)
             commit('setProfileUser', data)
