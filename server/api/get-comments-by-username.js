@@ -12,7 +12,10 @@ router.get('/users/:username/comments', async (req, res, next) => {
         limit: 5,
         include: [
           {
-            model: db.Item
+            model: db.Item,
+            include: [
+              { model: db.User }
+            ]
           }
         ]
       }]
