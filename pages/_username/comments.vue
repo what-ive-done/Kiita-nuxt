@@ -29,10 +29,12 @@
       </ul>
     </div>
     <div>
-      <div v-for="comment in comments" :key="comment.id">
-        <small>{{ comment.Item.title }}</small> <br>
-        {{ comment.body }}
-      </div>
+      <comment
+        v-for="comment in comments"
+        :key="comment.id"
+        :comment="comment"
+        :item="comment.Item"
+      />
     </div>
   </div>
 </template>
@@ -40,6 +42,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import axios from 'axios'
+import Comment from '~/components/username/Comment.vue'
 
 export default {
   layout: 'username',
@@ -54,6 +57,9 @@ export default {
   },
   computed: {
     ...mapGetters(['profileUser'])
+  },
+  components: {
+    Comment
   }
 }
 </script>
