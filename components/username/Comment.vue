@@ -13,14 +13,17 @@
       >
         {{ item.title }}
       </nuxt-link>
-      <div class="comment-created-at">{{ comment.createdAt }}</div>
+      <div class="comment-created-at">{{ comment.createdAt | formattedDate }}</div>
     </div>
     <div class="comment-body">{{ comment.body }}</div>
   </div>
 </template>
 
 <script>
+import mixins from '~/mixins'
+
 export default {
+  mixins: [ mixins.dateformat ],
   props: {
     comment: {
       type: Object,

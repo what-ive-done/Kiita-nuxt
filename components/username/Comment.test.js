@@ -66,7 +66,7 @@ describe('사용자 프로필의 Comment 컴포넌트', () => {
 
   test('언제 작성한 댓글인지 표시한다.', () => {
     expect(wrapper.find('.comment-created-at')).toBeTruthy()
-    expect(wrapper.find('.comment-created-at').text()).toBe(wrapper.vm.comment.createdAt)
+    expect(wrapper.find('.comment-created-at').text()).toBe('2018/05/20')
     // TODO: date-fns 로 래핑할것
   })
 
