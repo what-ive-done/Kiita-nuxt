@@ -36,6 +36,7 @@
     "eslint-loader": "^2.0.0",
     "eslint-plugin-vue": "^4.0.0",
     "faker": "^4.1.0",
+    "jest": "^22.4.4",
     "jest-vue-preprocessor": "^1.4.0",
     "node-sass": "^4.9.0",
     "nodemon": "^1.17.4",
