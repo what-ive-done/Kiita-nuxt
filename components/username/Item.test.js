@@ -38,13 +38,12 @@ describe('사용자 프로필의 Item 컴포넌트', () => {
       )
   })
 
-  test('작성일은 1달 이내면 days ago 형식으로 출력한다.', () => {
-    expect(wrapper.vm.item.createdAt).toBe('1 days ago')
+  test('작성일을 Humanize한다.', () => {
+    expect(wrapper.vm.daysAgo.includes('전')).toBe(true)
   })
 
   test('타이틀을 최대 20 글자까지 출력한다.', () => {
-    const title = 'Neque cum sequi enim vel consequatur alias voluptates in consectetur.'.slice(0, 20)
-    expect(wrapper.vm.item.title).toBe(title)
+    expect(wrapper.vm.stripedTitle.length <= 20).toBe(true)
   })
 
   test('작성자를 출력한다.', () => {
