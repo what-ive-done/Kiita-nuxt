@@ -1,4 +1,7 @@
-import { mount, RouterLinkStub } from '@vue/test-utils'
+import {
+  mount,
+  RouterLinkStub
+} from '@vue/test-utils'
 import Comment from './Comment.vue'
 import NuxtLink from '../../.nuxt/components/nuxt-link'
 
@@ -45,7 +48,7 @@ describe('사용자 프로필의 Comment 컴포넌트', () => {
     expect(spy)
       .toBeCalledWith(
         expect
-          .stringContaining('[Vue warn]: Missing required prop: \"comment\"')
+        .stringContaining('[Vue warn]: Missing required prop: \"comment\"')
       )
   })
 
@@ -55,7 +58,7 @@ describe('사용자 프로필의 Comment 컴포넌트', () => {
     expect(spy)
       .toBeCalledWith(
         expect
-          .stringContaining('[Vue warn]: Missing required prop: \"item\"')
+        .stringContaining('[Vue warn]: Missing required prop: \"item\"')
       )
   })
 
@@ -79,7 +82,10 @@ describe('사용자 프로필의 Comment 컴포넌트', () => {
     const nuxtLinkProps = {
       to: {
         name: 'username-items-id',
-        params: { username: 'Zora_Wiegand', id: 2008 }
+        params: {
+          username: 'Zora_Wiegand',
+          id: 2008
+        }
       }
     }
     expect(link.props()).toEqual(nuxtLinkProps)
