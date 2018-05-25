@@ -7,7 +7,12 @@ router.get('/items', async (req, res, next) => {
   try {
     const item = await db.Item.findAll({
       offset: 0,
-      limit: 10
+      limit: 10,
+      include: [
+        {
+          model: db.User
+        }
+      ]
     })
     return res.status(200).json(item)
   } catch (error) {
