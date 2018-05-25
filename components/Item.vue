@@ -20,7 +20,10 @@
         <h3 class="item-title">{{ item.title | stripedTitle }}</h3>
       </nuxt-link>
       <div class="item-meta">
-        <span class="item-username">{{ item.User.username }}</span>
+        <nuxt-link
+         class="item-username"
+        :to="{ name: 'username', params: { username: item.User.username } }"
+        >{{ item.User.username }}</nuxt-link>
         <span class="item-created">{{ item.createdAt | daysAgo }}</span>
       </div>
     </div>
