@@ -25,6 +25,5 @@ export default {
 .user-avatar {
   box-sizing: border-box;
   width: 100%;
-  padding: 1em;
 }
 </style>
