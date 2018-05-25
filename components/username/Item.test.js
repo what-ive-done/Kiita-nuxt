@@ -47,7 +47,6 @@ describe('사용자 프로필의 Item 컴포넌트', () => {
   })
 
   test('작성자를 출력한다.', () => {
-    const title = 'Neque cum sequi enim vel consequatur alias voluptates in consectetur.'.slice(0, 20)
     expect(wrapper.vm.item.User.username).toBe('Zora_Wiegand')
   })
 
