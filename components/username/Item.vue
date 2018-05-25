@@ -5,26 +5,14 @@
 </template>
 
 <script>
-import { distanceInWords } from 'date-fns'
-import koLocale from 'date-fns/locale/ko'
+import Mixins from '~/mixins'
 
 export default {
+  mixins: [Mixins.listItem],
   props: {
     item: {
       type: Object,
       required: true
-    }
-  },
-  computed: {
-    // TODO: Filter 믹스인으로 만들 것
-    daysAgo () {
-      const days = distanceInWords(this.item.createdAt, new Date(), {
-        locale: koLocale
-      })
-      return `${days} 전`
-    },
-    stripedTitle () {
-      return this.item.title.slice(0, 20)
     }
   }
 }
