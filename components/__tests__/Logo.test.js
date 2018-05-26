@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Logo from './Logo.vue'
+import Logo from '../Logo.vue'
 
 describe('로고 컴포넌트', () => {
   let wrapper

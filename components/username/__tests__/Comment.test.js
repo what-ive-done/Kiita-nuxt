@@ -2,8 +2,8 @@ import {
   mount,
   RouterLinkStub
 } from '@vue/test-utils'
-import Comment from './Comment.vue'
-import NuxtLink from '../../.nuxt/components/nuxt-link'
+import Comment from '../Comment.vue'
+import NuxtLink from '../../../.nuxt/components/nuxt-link'
 
 
 describe('사용자 프로필의 Comment 컴포넌트', () => {

@@ -1,6 +1,6 @@
 import { mount, RouterLinkStub } from '@vue/test-utils'
 import Item from './Item.vue'
-import NuxtLink from '../../.nuxt/components/nuxt-link'
+import NuxtLink from '../../../.nuxt/components/nuxt-link'
 
 describe('사용자 프로필의 Item 컴포넌트', () => {
   let wrapper

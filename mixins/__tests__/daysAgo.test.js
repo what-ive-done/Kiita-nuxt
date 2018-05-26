@@ -1,4 +1,4 @@
-import Mixins from './index'
+import Mixins from '../index'
 import { format, subDays } from 'date-fns'
 
 describe('[Mixin : filter] daysAgo', () => {

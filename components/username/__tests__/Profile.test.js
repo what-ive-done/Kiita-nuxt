@@ -1,5 +1,5 @@
 import { mount, shallowMount, createLocalVue } from '@vue/test-utils'
-import Profile from './Profile.vue'
+import Profile from '../Profile.vue'
 
 describe('프로필 컴포넌트', () => {
   let wrapper

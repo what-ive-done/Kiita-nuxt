@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Gravatar from './Gravatar.vue'
+import Gravatar from '../Gravatar.vue'
 
 describe('Gravatar 컴포넌트', () => {
   test('컴포넌트 이름은 gravatar이다.', () => {
