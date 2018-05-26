@@ -15,16 +15,11 @@
 
     <div class="pure-u-1">
       <!-- Comments -->
-      <ul>
-        <li v-for="comment in item.Comments" :key="comment.id">
-          <nuxt-link
-            :to="{ name: 'username', params: { username: comment.User.username } }"
-          >
-            {{ comment.User.username }}
-          </nuxt-link>
-            - {{ comment.body }}
-        </li>
-      </ul>
+      <item-comment
+        v-for="comment in item.Comments"
+        :key="comment.id"
+        :comment="comment"
+      />
     </div>
   </div>
 </template>
@@ -32,10 +27,12 @@
 <script>
 import axios from 'axios'
 import ItemDetails from '@/components/item/Details'
+import ItemComment from '@/components/item/Comment'
 
 export default {
   components: {
-    ItemDetails
+    ItemDetails,
+    ItemComment
   },
   async asyncData (context) {
     try {
