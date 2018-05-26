@@ -26,7 +26,6 @@ describe('프로필 컴포넌트', () => {
     const wrapper = shallowMount(Profile, {
       stubs: ['router-link', 'nuxt-link']
     })
-    expect(spy).toBeCalledWith(expect.stringContaining('[Vue warn]: Missing required prop: \"user\"'))
   })
 
   test('Gravatar 컴포넌트를 갖는다.', () => {
