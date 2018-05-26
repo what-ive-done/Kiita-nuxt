@@ -1,4 +1,4 @@
-import { distanceInWords, differenceInCalendarDays, format } from 'date-fns'
+import { distanceInWords, differenceInCalendarDays, format, isToday } from 'date-fns'
 import koLocale from 'date-fns/locale/ko'
 
 const dateformat = {
@@ -15,9 +15,10 @@ const listItem = {
     daysAgo (value) {
       const now = new Date()
       const dayDiff = differenceInCalendarDays(now, value)
-      if (dayDiff > 20) {
-        return format(value, 'YYYY.MM.DD')
-      }
+
+      if (dayDiff > 20) return format(value, 'YYYY.MM.DD')
+
+      if (isToday(value)) return '오늘'
 
       const locale = { locale: koLocale }
       const days = distanceInWords(value, now, locale)
