@@ -1,6 +1,15 @@
 <template>
   <div class="container">
-    <item v-for="post in posts" :key="post.id" :item="post"/>
+    <div class="pure-g">
+      <div class="pure-u-1-5">
+        <p>Trend</p>
+      </div>
+      <div class="pure-u-3-5">
+        <item v-for="post in posts" :key="post.id" :item="post"/>
+      </div>
+      <div class="pure-u-1-5"><p>Trending User</p></div>
+    </div>
+
   </div>
 </template>
 
