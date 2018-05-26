@@ -1,8 +1,5 @@
 <template>
   <div class="container mx-auto">
-    <div class="pure-g">
-
-    </div>
     <div class="pure-u-3-5 content">
         <!-- Markdown -->
         <h1>
