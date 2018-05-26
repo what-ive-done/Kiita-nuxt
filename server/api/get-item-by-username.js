@@ -9,6 +9,7 @@ router.get('/users/:username/items/:item_id', async (req, res, next) => {
     const item = await db.Item.findOne({
       where: { UserId: user.id, id: itemId },
       include: [
+        { all: true },
         {
           model: db.Comment,
           include: [
@@ -16,7 +17,7 @@ router.get('/users/:username/items/:item_id', async (req, res, next) => {
               model: db.User
             }
           ]
-        }
+        },
       ]
     })
     return res.status(200).json(item)
